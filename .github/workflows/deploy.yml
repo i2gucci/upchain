@@ -28,8 +28,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Change to VITE_BASE_PATH=/ when using custom domain
-          VITE_BASE_PATH: /tradelog/
+          # Using / for custom domain tradelog.fun
+          VITE_BASE_PATH: /
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
