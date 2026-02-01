@@ -6,7 +6,7 @@ import { TradeList } from './components/TradeList';
 import { TradeReport } from './components/TradeReport';
 import { QuickAddModal } from './components/QuickAddModal';
 import { Trade, Session } from './types';
-import { loadState, saveState } from './storage';
+import { loadState, saveState, createSession } from './storage';
 import './App.css';
 
 function App() {
@@ -152,6 +152,18 @@ function App() {
     event.target.value = '';
   };
 
+  const handleCreateNewSession = () => {
+    const now = new Date();
+    const estDate = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    const month = String(estDate.getMonth() + 1).padStart(2, '0');
+    const day = String(estDate.getDate()).padStart(2, '0');
+    const year = estDate.getFullYear();
+    const dateString = `${month}.${day}.${year}`;
+    
+    const session = createSession(dateString, dateString);
+    handleCreateSession(session);
+  };
+
   return (
     <div className="app">
       <aside className="sidebar">
@@ -219,6 +231,14 @@ function App() {
               <div className="empty-state-large">
                 <h2>Welcome to Trade Tracker</h2>
                 <p>Create a session to start documenting your trades</p>
+                <button 
+                  type="button"
+                  className="btn-primary btn-large"
+                  onClick={handleCreateNewSession}
+                >
+                  <Plus size={20} />
+                  New Session
+                </button>
               </div>
             )}
           </>

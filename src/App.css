@@ -1587,6 +1587,12 @@ textarea {
   font-size: 15px;
 }
 
+.btn-large {
+  padding: 12px 24px;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
