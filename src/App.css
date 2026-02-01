@@ -96,6 +96,33 @@ body {
   cursor: pointer;
 }
 
+.btn-icon-with-text {
+  flex: 1;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-icon-with-text:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-light);
+  transform: translateY(-1px);
+}
+
+.btn-icon-with-text:active {
+  transform: translateY(0);
+}
+
 .session-selector {
   flex: 1;
   display: flex;

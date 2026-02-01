@@ -161,14 +161,16 @@ function App() {
           <div className="import-export-controls">
             <button 
               type="button"
-              className="btn-icon" 
+              className="btn-icon-with-text" 
               onClick={handleExportData}
               title="Export all data as JSON backup"
             >
-              <Download size={18} />
+              <Download size={16} />
+              <span>Export</span>
             </button>
-            <label className="btn-icon" title="Import data from JSON backup">
-              <Upload size={18} />
+            <label className="btn-icon-with-text" title="Import data from JSON backup">
+              <Upload size={16} />
+              <span>Import</span>
               <input
                 type="file"
                 accept=".json"
